@@ -14,6 +14,7 @@
 \usepackage{setspace}
 \usepackage{calc}
 \usepackage{tcolorbox}
+\usepackage[numbers]{natbib}
 \usepackage{tikz}
 \usetikzlibrary{arrows, shapes, decorations}
 \tcbuselibrary{skins}
@@ -22,6 +23,8 @@
 \setmainfont{Tahoma}
 \setsansfont{Tahoma}
 
+\renewcommand*{\bibfont}{\footnotesize}
+\def\newblock{\hskip .11em plus .33em minus .07em}
 \newcolumntype{P}[1]{>{\raggedright\let\newline\\\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\raggedright\arraybackslash}m{#1}}
 
@@ -36,6 +39,7 @@
 \newtcolorbox{BlueBox}{spartan, colback=BkgdBlue, colframe=TitleBlue, toprule=5mm, bottomrule=0mm, rightrule=0mm, leftrule=0mm} %blue boxes
 \newtcolorbox{GreyBox}{spartan, colback=white, colframe=TitleBlue, toprule=5mm, bottomrule=0mm, rightrule=0mm, leftrule=0mm} %grey boxes
 \newtcolorbox{WhiteBox}{spartan, colback=white, colframe=TextGrey, toprule=5mm, bottomrule=0mm, rightrule=0mm, leftrule=0mm} %footer boxed
+\newtcolorbox{ClearBox}{spartan, colback=white, colframe=white, toprule=0mm, bottomrule=0mm, rightrule=0mm, leftrule=0mm} %qr-code boxed
 
 %sizes for different sections
 \def\BHead#1{\begin{flushleft}{{\fontseries{bx}\fontsize{36}{44}\selectfont\color{TitleBlue} #1}}\smallskip\end{flushleft}}
