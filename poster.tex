@@ -1,0 +1,50 @@
+\documentclass[20pt]{beamer}
+\input{tex_files/preamble}
+
+\setbeamersize{text margin left = 0cm, text margin right = 0cm}
+
+\begin{document}
+    \begin{frame}
+
+        %Introduction
+        \begin{textblock}{10}(0,20)
+            \input{tex_files/introduction}
+        \end{textblock}
+
+        %Methodology
+        \begin{textblock}{10}(0,44)
+            \input{tex_files/methodology}
+        \end{textblock}
+
+        %Results
+        \begin{textblock}{19}(11,20)
+            \input{tex_files/results}
+        \end{textblock}
+
+        %conclusions
+        \begin{textblock}{30}(0,76)
+            \input{tex_files/conclusions}
+        \end{textblock}
+
+        %references
+        \begin{textblock}{17}(0,94)
+            \begin{WhiteBox}
+                \vspace{-1cm}
+                \begin{block}{\Subsubhead{References}}
+                    {\fontsize{17}{20}\selectfont\bibliographystyle{abbrv}}
+                    \bibliography{../../PhD_References}
+                \end{block}
+            \end{WhiteBox}
+        \end{textblock}
+
+        %sponsors
+        \begin{textblock}{12}(18,94)
+            \begin{WhiteBox}
+                \vspace{-1cm}
+                \begin{block}{\Subsubhead{The IASS is sponsored by}}
+                    \includegraphics[width=\textwidth]{img/Sponsor_logos}
+                \end{block}
+            \end{WhiteBox}
+        \end{textblock}
+    \end{frame}
+\end{document}

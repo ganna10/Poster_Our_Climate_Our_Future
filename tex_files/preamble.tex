@@ -1,0 +1,99 @@
+\usepackage{etex}
+\usepackage[T1]{fontenc}
+\usepackage[orientation=portrait, size = a0, scale = 1.4]{beamerposter}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.png, .jpg, .pdf}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{todonotes}
+\usepackage[version=3]{mhchem}
+\usepackage{chemarrow}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows, shapes, decorations}
+\tcbuselibrary{skins}
+\usepackage[quiet]{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Tahoma}
+\setsansfont{Tahoma}
+
+\newcolumntype{P}[1]{>{\raggedright\let\newline\\\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\raggedright\arraybackslash}m{#1}}
+
+\definecolor{TitleBlue}{RGB}{75,151,182}
+\definecolor{TextGrey}{RGB}{101,98,99}
+\definecolor{BkgdBlue}{RGB}{224,238,244}
+\definecolor{BkgdGrey}{RGB}{236,236,236}
+
+\TPGrid[40mm,40mm]{30}{100}
+
+%create colourbox for framing each sections text
+\newtcolorbox{BlueBox}{spartan, colback=BkgdBlue, colframe=TitleBlue, toprule=5mm, bottomrule=0mm, rightrule=0mm, leftrule=0mm} %blue boxes
+\newtcolorbox{GreyBox}{spartan, colback=white, colframe=TitleBlue, toprule=5mm, bottomrule=0mm, rightrule=0mm, leftrule=0mm} %grey boxes
+\newtcolorbox{WhiteBox}{spartan, colback=white, colframe=TextGrey, toprule=5mm, bottomrule=0mm, rightrule=0mm, leftrule=0mm} %footer boxed
+
+%sizes for different sections
+\def\BHead#1{\begin{flushleft}{{\fontseries{bx}\fontsize{36}{44}\selectfont\color{TitleBlue} #1}}\smallskip\end{flushleft}}
+\def\GHead#1{\begin{flushleft}{{\fontseries{bx}\fontsize{36}{44}\selectfont\color{TextGrey} #1}}\smallskip\end{flushleft}}
+\def\Subhead#1{\noindent{\large\color{white}#1}}
+\def\Subsubhead#1{\noindent{\begin{flushleft}{{\fontseries{bx}\fontsize{36}{44}\selectfont\color{TextGrey} #1}}\smallskip\end{flushleft}}}
+
+\hypersetup{pdfauthor = {Jane Coates},
+		    pdftitle = {2014 Our Climate Our Future Poster Presentation},	
+		    pdfsubject = {Our Climate Our Future, tropospheric ozone, chemical mechanism comparison, TOPP},
+		    pdfkeywords = {TOPP, tropospheric ozone, Our Climate Our Future, chemical mechanism comparison},
+		    pdfcreator = {Latex with hyperref},
+		    pdfcreator = {xelatex}}
+
+\setbeamertemplate{navigation symbols}{}
+%bibliography
+\setbeamercolor{bibliography item}{fg=black}
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor*{bibliography entry title}{fg=black}
+\setbeamercolor*{bibliography entry location}{fg=black}
+\setbeamercolor*{bibliography entry note}{fg=black}
+\setbeamertemplate{bibliography item}[text]
+
+\newcommand{\cemph}[1]{\textcolor{\highlightcolor}{#1}}
+\newcommand{\highlightcolor}{TitleBlue}
+\newcommand{\authorname}{Jane Coates and Tim Butler}
+\newcommand{\postertitle}{Understanding Ozone Pollution:}
+\newcommand{\subposter}{A Comparison of Chemical Mechanisms}
+\newcommand{\Institute}{Institute for Advanced Sustainability Studies (IASS)}
+
+%header
+\setbeamercolor{headline}{fg=white, bg=TitleBlue}
+\setbeamercolor{title in headline}{fg=white}
+\setbeamercolor{institute in headline}{fg=white}
+\setbeamercolor{author in headline}{fg=white}
+
+\setbeamertemplate{headline}{
+    \leavevmode
+    \begin{beamercolorbox}[wd=\paperwidth]{headline}
+        \begin{flushleft}
+            \begin{tikzpicture}[overlay]
+                \node (topleft) {};
+                \node (lowerleft) [below = 2cm of topleft] {};
+                \node (A) [right = 3.4cm of lowerleft] {};
+                \node (B) [right = 65cm of A] {};
+                \draw [draw = white, line width = 7mm] (A) -- (B);
+                \node (dummy) [below = 2.5cm of A] {};
+                \node (logo) [right = 66cm of dummy] {\includegraphics{img/IASS_Logo_white}};
+            \end{tikzpicture}
+            \vskip3cm \hskip38mm
+            \usebeamercolor{institude in headline}{\color{fg}{\fontsize{34}{41} \selectfont \Institute}\\}
+            \vskip4cm \hskip38mm
+            \usebeamercolor{title in headline}{\color{fg}{\fontsize{135}{162} \selectfont \postertitle}\\}
+            \vskip2cm \hskip38mm
+            \usebeamercolor{title in headline}{\color{fg}{\fontsize{80}{96} \selectfont \subposter}\\}
+            \vskip2.6cm \hskip38mm
+            \usebeamercolor{author in headline}{\color{fg}{\fontsize{34}{41} \selectfont \authorname}\\}
+            \vskip2cm
+        \end{flushleft}
+    \end{beamercolorbox}
+}
